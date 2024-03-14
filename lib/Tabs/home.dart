@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -182,13 +183,30 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: <Widget>[
                 MyStory(MyStory: "assets/Images/Pic1.jpg"),
-                friendStory(friendStory: "assets/Images/pic1.jpg",friendName: "Osama Shaheen"),
-                friendStory(friendStory: "assets/Images/pic2.jpg",friendName: "Osama Shaheen"),
-                friendStory(friendStory: "assets/Images/pic3.jpg",friendName: "Osama Shaheen"),
-                friendStory(friendStory: "assets/Images/pic4.jpg",friendName: "Osama Shaheen"),
-                friendStory(friendStory: "assets/Images/pic5.jpg",friendName: "Osama Shaheen"),
-                friendStory(friendStory: "assets/Images/pic6.jpg",friendName: "Osama Shaheen"),
-                friendStory(friendStory: "assets/Images/pic7.jpg",friendName: "Osama Shaheen"),
+                friendStory(
+                    friendStory: "assets/Images/story/s1.jpg",
+                    friendName: "Ibraheem B.",
+                    friendPicture: "assets/Images/pic2.jpg"),
+                friendStory(
+                    friendStory: "assets/Images/story/s2.jpg",
+                    friendName: "Adam Shaheen",
+                    friendPicture: "assets/Images/Pic3.jpg"),
+                friendStory(
+                    friendStory: "assets/Images/story/s3.jpg",
+                    friendName: "أ.محمد بشارات",
+                    friendPicture: "assets/Images/pic4.jpg"),
+                friendStory(
+                    friendStory: "assets/Images/story/s4.jpg",
+                    friendName: "Linda Bsharat",
+                    friendPicture: "assets/Images/pic5.jpg"),
+                friendStory(
+                    friendStory: "assets/Images/story/s5.jpg",
+                    friendName: "Abdullah Jihad",
+                    friendPicture: "assets/Images/pic6.jpg"),
+                friendStory(
+                    friendStory: "assets/Images/pic2.jpg",
+                    friendName: "Osama Ahmad",
+                    friendPicture: "assets/Images/pic2.jpg"),
               ],
             ),
           ),
@@ -248,7 +266,7 @@ Widget MyStory({MyStory}) {
   );
 }
 
-Widget friendStory({friendStory,friendName}) {
+Widget friendStory({friendStory, friendName, friendPicture}) {
   return Padding(
     padding: const EdgeInsets.only(left: 5, top: 5, bottom: 5),
     child: Container(
@@ -265,12 +283,26 @@ Widget friendStory({friendStory,friendName}) {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.add_circle),
-                color: Colors.white,
-                iconSize: 40,
-              )
+              Container(
+                width: 40,
+                height: 40,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(
+                      color: Colors.blue,
+                      style: BorderStyle.solid,
+                      width: 2,
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage(
+                        friendPicture,
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           Row(
