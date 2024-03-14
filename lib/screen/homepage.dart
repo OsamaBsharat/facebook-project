@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:facebook/Tabs/home.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,6 +25,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.blue,
               ),
             ),
+           
             actions: <Widget>[
               IconButton(
                 onPressed: () {},
@@ -60,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                 ]),
           ),
           body: TabBarView(children: <Widget>[
-            Icon(Icons.home),
+            HomeScreen(),
             Icon(Icons.home),
             Icon(Icons.home),
             Icon(Icons.home),
