@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -219,6 +220,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
+          friendPost(context),
+          friendPost(context),
+          friendPost(context),
+          friendPost(context),
+          friendPost(context),
+          friendPost(context),
         ],
       ),
     );
@@ -311,12 +318,88 @@ Widget friendStory({friendStory, friendName, friendPicture}) {
             children: <Widget>[
               Text(
                 friendName,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
         ],
       ),
+    ),
+  );
+}
+
+Widget friendPost(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.only(
+      bottom: 5,
+      top: 5,
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: 450,
+          color: Colors.amber,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                color: Colors.white,
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width / 7.67,
+                      height: 50,
+                      color: Colors.teal,
+                      child: Image.asset(
+                        "assets/Images/pic5.jpg",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              width: MediaQuery.of(context).size.width / 1.3529,
+                              height: 20,
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              width: MediaQuery.of(context).size.width / 1.3529,
+                              height: 30,
+                              color: Colors.green,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Container(
+                          width: MediaQuery.of(context).size.width / 7.67,
+                          height: 50,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
   );
 }
